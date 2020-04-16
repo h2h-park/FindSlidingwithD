@@ -1,2 +1,2 @@
-# FindSlidingwithD
-Find Sliding phenomenon of length D
+# Sliding
+Find Sliding phenomenon Cases
