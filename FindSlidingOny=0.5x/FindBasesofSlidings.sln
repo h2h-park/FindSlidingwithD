@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FindSlidingOny=0.5x", "FindSlidingOny=0.5x.vcxproj", "{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Debug|x64.ActiveCfg = Debug|x64
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Debug|x64.Build.0 = Debug|x64
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Debug|x86.ActiveCfg = Debug|Win32
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Debug|x86.Build.0 = Debug|Win32
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Release|x64.ActiveCfg = Release|x64
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Release|x64.Build.0 = Release|x64
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Release|x86.ActiveCfg = Release|Win32
+		{3D94F00F-8BE6-48A8-9BBA-FEB32B90A497}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F9C86FA-CD36-4F0B-9E74-F1E7E3E6AD45}
+	EndGlobalSection
+EndGlobal
