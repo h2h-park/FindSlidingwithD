@@ -22,6 +22,7 @@ vector<triangle> minTriangles;
 vector<triangle> previousTri;
 vector<triangle> minimalTriangles;
 ll minDoubledArea;
+int cnt = 0;
 
 void getTriangles(ll x, ll y, ll D) {
 	// Find triangle such that D = l1 <= l2 <= l3 based on the point (x, y)
@@ -33,12 +34,12 @@ void getTriangles(ll x, ll y, ll D) {
 	// Rotate (x, y) by 60 degrees
 
 	// Examine the neighborhood of the given point
-	for (ll i = x - 3; i < x + 3; i++) {
-		for (ll j = y - 3; j < y + 3; j++) {
+	for (ll i = x ; i < x + 3; i++) {
+		for (ll j = y ; j < y + 3; j++) {
 			ll l1 = i * i + j * j;
 			// Examine the neighborhood of the rotated point
 			for (ll k = p - 3; k < p + 3; k++) {
-				for (ll l = q - 2; l < q + 3; l++) {
+				for (ll l = q - 3; l < q + 3; l++) {
 					ll l2 = k * k + l * l;
 					ll l3 = (k - i) * (k - i) + (l - j) * (l - j);
 					v.x1 = i, v.x2 = k, v.y1 = j, v.y2 = l;
@@ -102,13 +103,14 @@ void getMinimalTriangles(ll D) {
 	ll j = sqrt(D);
 	minDoubledArea = D; // Initialize for finding the minimum value
 	for (ll i = 0; i * i <= D; i++) {
+		if (i > j) break; // It is enough to consider area between y = x and y = -x with x > 0
 		if (i * i + j * j == D) {
+			cnt += 2;
 			getTriangles(j, i, D);
 			getTriangles(j, -i, D);
 			j--;
 		}
-		else if (i * i + j * j > D) j--;
-		if (i > j) break; // It is enough to consider area between y = x and y = -x with x > 0
+		else if (i * i + j * j > D) i--, j--;
 	}
 
 	// If there is no triangle with the shortest side length of D, ignore.
@@ -132,16 +134,18 @@ void getMinimalTriangles(ll D) {
 }
 
 int main(void) {
-	ll D;
+	ll D, Dsq;
 	DWORD start = GetTickCount();
 	freopen("SlidingswithD.txt", "w", stdout);
 	//cin >> D;
-	for (D = 100000; D >= 1000; D--) { // need to be iterated by descending order
-		getMinimalTriangles(D);
+	D = 200;
+	for (Dsq = D * D; Dsq >= 100; Dsq--) { // need to be iterated by descending order
+		getMinimalTriangles(Dsq);
 	}
 	getSliding();
 	minTriangles.clear();
 	printf("%dms\n", GetTickCount() - start);
+	printf("number of callings : %d\n", cnt);
 
 	fclose(stdout);
 	return 0;
